@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("com.google.devtools.ksp") version "2.0.21-1.0.28" // KSP for Room
+    alias(libs.plugins.ksp)
     id("com.google.gms.google-services")
 }
 
@@ -38,7 +38,7 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true   // We'll use ViewBinding, NOT Compose
+        viewBinding = true
     }
 }
 
@@ -94,6 +94,4 @@ dependencies {
 // Google Sign In
     implementation("com.google.android.gms:play-services-auth:21.2.0")
     implementation("com.google.android.gms:play-services-location:21.2.0")
-
-
 }
